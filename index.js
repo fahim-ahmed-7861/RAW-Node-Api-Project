@@ -9,12 +9,43 @@
 // dependencies
 
 const http = require('http');
-const url = require('url');
 const {handleReqRes} = require('./helpers/handleReqRes')
+const environment = require('./helpers/environments')
+const data = require('./lib/data')
+
 
 
 // app-object module scaffolding
 const app = {};
+
+//Testing : pore muche dibo
+
+/*data.delete('test','newfile',err=>{
+    
+
+    console.log(err)
+
+})
+
+/*data.update('test','newfile',{name : 'india', language : 'hindi'},err=>{
+    
+
+    console.log(err)
+
+})*/
+
+/*data.read('test','newfile',(err,data)=>
+{
+    console.log(err,data);
+})*/
+
+/*data.create('test','newfile',{name : 'bangladesh', language : 'bangla'},(err)=>
+{
+    console.log('error was : ',err);
+})*/
+
+
+
 
 //configuration 
 app.config = {
@@ -27,9 +58,10 @@ app.createServer = ()=>
 {
     const server = http.createServer(app.handleReqRes);
 
-    server.listen(app.config.port,()=>
+    server.listen(environment.port,()=>
     {
-        console.log(`listening to port ${app.config.port}`)
+       
+        console.log(`listening to port ${environment.port}`)
     });
 
 }
@@ -42,5 +74,3 @@ app.handleReqRes = handleReqRes;
 // start the server
 
 app.createServer();
-
-
