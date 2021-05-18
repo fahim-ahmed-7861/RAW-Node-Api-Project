@@ -13,12 +13,19 @@ const {handleReqRes} = require('./helpers/handleReqRes')
 const environment = require('./helpers/environments')
 const data = require('./lib/data')
 
+const {sendTwilioSms} =require('./helpers/notification');
 
 
 // app-object module scaffolding
 const app = {};
 
 //Testing : pore muche dibo
+
+sendTwilioSms('01778482201','Hello Word',(err)=>
+{
+    console.log('this is a error message ',err);
+})
+
 
 /*data.delete('test','newfile',err=>{
     
