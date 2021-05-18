@@ -47,7 +47,7 @@ handler.handleReqRes=(req,res)=>
     const chosenHandler = routes[trimedPath] ? routes[trimedPath] : notFoundHandler;
 
  
-
+  
     req.on('data',(buffer)=>{ 
         realData+= decoder.write(buffer);
     });

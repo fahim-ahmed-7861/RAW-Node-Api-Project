@@ -21,6 +21,8 @@ utilities.parseJson = (jsonString)=>
 {
     let output;
 
+   // console.log('jsonString : ',jsonString);
+
     try{
             output = JSON.parse(jsonString);
     }
@@ -28,6 +30,7 @@ utilities.parseJson = (jsonString)=>
     {
         output={};
     }
+   // console.log('output : ',output);
 
     return output;
 
